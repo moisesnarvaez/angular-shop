@@ -22,6 +22,8 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 
 gem 'haml', '~> 4.0.5'
+gem 'angularjs-rails', '~> 1.2.18'
+gem "jasmine", github: "pivotal/jasmine-gem"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -30,6 +32,8 @@ end
 
 group :development do
   gem 'rspec-rails', '~> 3.0.1'
+  gem "better_errors"
+  gem 'annotate'
 end
 
 # Use ActiveModel has_secure_password

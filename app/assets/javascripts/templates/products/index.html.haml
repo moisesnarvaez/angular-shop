@@ -1,0 +1,7 @@
+%h1 {{title}}
+%select{"ng-model" => "ordering"}
+  %option{value: "title"} title
+.row{"ng-repeat" => "product in products | orderBy: ordering"}
+  %h2
+    %a{"ng-click" => "viewProduct($index)"} {{ product.title }}
+  %p {{ product.description }}

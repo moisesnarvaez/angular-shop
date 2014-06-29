@@ -1,10 +1,12 @@
 class ProductsController < ApplicationController
+  respond_to :json
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # GET /products
   # GET /products.json
   def index
     @products = Product.all
+    render :json => @products.as_json
   end
 
   # GET /products/1
