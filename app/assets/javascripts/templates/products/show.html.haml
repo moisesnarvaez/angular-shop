@@ -2,4 +2,6 @@
 %p {{product.price | currency: "$"}}
 %p {{product.description}}
 %p 
-  %a{href: "#/products"} Volver
+  %a{href: "#/products"} Back
+  %a{href: "#/products/{{product.id}}/edit"} Edit
+  %a{"ng-click" => "deleteProduct()"} Delete

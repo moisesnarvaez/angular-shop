@@ -13,8 +13,11 @@ AngularShop.controller('ProductsIndexCtrl', [
     $scope.ordering = $scope.orderOptions[0];
 
     $scope.viewProduct = function(id) {
-      console.log(id)
       return $location.url('/products/' + id);
+    };
+
+    $scope.newProduct = function(id) {
+      return $location.url('/products/new');
     };
 
   }

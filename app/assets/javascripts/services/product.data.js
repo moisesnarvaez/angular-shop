@@ -19,6 +19,10 @@ AngularShop.factory('ProductData', [
       }
     }
 
+    ProductData.setLoaded = function(loaded){
+      ProductData.data.loaded = loaded;
+    }
+
     return ProductData;
   }
 ]);

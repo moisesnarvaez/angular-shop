@@ -1,0 +1,26 @@
+%h2
+  %span{"ng-if" => "isNew"}
+    New  
+  %span{"ng-if" => "!isNew"}
+    Edit
+  Product
+%form
+  %input{"ng-model" => "product.id", placeholder: "Price", type: "hidden"}
+  %label
+    Title 
+    %br
+    %input{"ng-model" => "product.title", placeholder: "Title", type: "text"}
+  %br
+  %label
+    Price
+    %br
+    %input{"ng-model" => "product.price", placeholder: "Price", type: "number"}
+  %br
+  %label
+    Description
+    %br
+    %textarea{"ng-model" => "product.description", placeholder: "Title"}
+  %br
+  %button{"ng-click" => "saveProduct()"} Save
+%p 
+  %a{href: "javascript:window.history.back();"} Back

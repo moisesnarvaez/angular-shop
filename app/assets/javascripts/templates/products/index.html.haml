@@ -1,6 +1,9 @@
 %h1 {{title}}
-%select{"ng-model" => "ordering", "ng-options" => "order.name for order in orderOptions"}
-.row{"ng-repeat" => "product in data.products | orderBy: ordering.name"}
-  %h2
-    %a{"ng-click" => "viewProduct(product.id)"} {{ product.title }}
-  %p {{ product.description }}
+%b
+  %a{"ng-click" => "newProduct()"} New Product
+%p
+  %select{"ng-model" => "ordering", "ng-options" => "order.name for order in orderOptions"}
+  .row{"ng-repeat" => "product in data.products | orderBy: ordering.name"}
+    %h2
+      %a{"ng-click" => "viewProduct(product.id)"} {{ product.title }}
+    %p {{ product.description }}
