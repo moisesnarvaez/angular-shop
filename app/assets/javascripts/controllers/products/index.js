@@ -1,11 +1,19 @@
 AngularShop.controller('ProductsIndexCtrl', [
-  '$scope', '$http', '$location', 'Product', function($scope, $http, $location, Product) {
+  '$scope', '$http', '$location', 'ProductData', function($scope, $http, $location, ProductData) {
     $scope.title = "Products";
 
-    $scope.products = Product.query();
-    $scope.orderOptions = ["title", "price"];
+    $scope.data = ProductData.data;
+    ProductData.loadProducts();
+
+    $scope.orderOptions = [
+      { name: "title"},
+      { name: "price"}
+    ];
+
+    $scope.ordering = $scope.orderOptions[0];
 
     $scope.viewProduct = function(id) {
+      console.log(id)
       return $location.url('/products/' + id);
     };
 

@@ -1,6 +1,24 @@
-AngularShop.factory('Product', [
-  '$resource', function($resource) {
+AngularShop.factory('ProductData', [
+  '$resource', 'Product', function($resource, Product) {
     
-    return $resource('products/:productId.json', {}, {});
+    var ProductData = {
+      data: {
+        products: [],
+        loaded: false  
+      }
+    };
+
+    ProductData.loadProducts = function(){
+      if(!ProductData.data.loaded){
+        Product.query({}, function(data){
+          ProductData.data.products = data;
+          ProductData.data.loaded = true;
+        }, function(){
+          console.error("ERROR getting Products");
+        });
+      }
+    }
+
+    return ProductData;
   }
 ]);

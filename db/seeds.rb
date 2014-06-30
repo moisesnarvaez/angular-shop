@@ -18,6 +18,6 @@ end
 
 categories.each do |cat|
   title       = get_random_string(2)
-  description = get_random_string(10)
-  Product.create(title: title, description: description, category_id: cat.id, price: rand(9999))
+  description = get_random_string(20)
+  Product.create(title: title, description: description, category_id: cat.id, price: rand(99))
 end
