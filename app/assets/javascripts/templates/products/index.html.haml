@@ -6,4 +6,4 @@
   .row{"ng-repeat" => "product in data.products | orderBy: ordering.name"}
     %h2
       %a{"ng-click" => "viewProduct(product.id)"} {{ product.title }}
-    %p {{ product.description }}
+    %p{"ng-click" => "viewProduct(product.id)"} {{ product.description }}

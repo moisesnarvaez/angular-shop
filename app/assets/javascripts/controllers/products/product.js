@@ -25,7 +25,7 @@ AngularShop.controller('ProductCtrl', [
         price: $scope.product.price
       }
       if(!$scope.isNew){
-        Product.update({ productId: $scope.product.id }, params, successFeedback, errorFeedback);
+        Product.update({ productId: $scope.productId }, params, successFeedback, errorFeedback);
       }else{
         var newProduct = new Product(params);
         newProduct.$save().then(successFeedback, errorFeedback);
